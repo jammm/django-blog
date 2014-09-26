@@ -7,7 +7,8 @@ from mongo_app import views
 
 urlpatterns = patterns('',
 	url(r'^$', views.index, name='home'),
-	url(r'^insert_blog$', views.index, name='home'),
+	url(r'^insert_blog$', views.index, name='index'),
+	url(r'^reset$', views.reset, name='reset'),
     # Examples:
     # url(r'^$', 'mongodb.views.home', name='home'),
     # url(r'^mongodb/', include('mongodb.foo.urls')),

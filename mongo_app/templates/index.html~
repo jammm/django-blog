@@ -1,19 +1,5 @@
 <html>
-<style>
-#thediv {
-    margin:0 auto;
-	height:400px;
-	width:400px;
-	overflow:hidden;
-	}
 
-img {
-    position: relative;
-    left: 50%;
-    top: 50%;
-}
-
-</style>
 <h1 align = "center">JAM'S BLOG</h1>
 <br /><br />
 <h3>Insert new blog</h3>
@@ -32,7 +18,7 @@ img {
 
 {% for blog in blogs %}
 <h2>{{ blog.title}}</h2>
-<div id = "thediv" align = "center"><img src="static/{{blog.image}}.png"></img></div>
+<div align = "center"><img src="static/{{blog.image}}.png"></img></div>
 <p> {{ blog.content|safe}} </p>
 <hr>
 

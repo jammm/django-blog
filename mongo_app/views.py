@@ -42,3 +42,9 @@ def index(request):
 			blogs.append(i)
 
 		return render_to_response("index.html",{"blogs":blogs})
+
+def reset(request):
+	client = MongoClient()
+	db = client.test_database
+	db.blogs.remove()
+	return HttpResponse("Database has been reset")

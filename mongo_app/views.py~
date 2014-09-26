@@ -15,7 +15,7 @@ def index(request):
 		file_db = MongoClient().gridfs_images
 		fs = gridfs.GridFS(file_db)
 		file_obj = fs.put(request.FILES['image'].read())
-		file = open("static/" + str(fs.get(file_obj)._id) + ".png","w")
+		file = open("mongo_app/static/" + str(fs.get(file_obj)._id) + ".png","w")
 		file.write(fs.get(file_obj).read())
 
 		blog = ({"title":request.POST['title'], "content":request.POST['blog_content'], "image":file_obj})
@@ -42,3 +42,8 @@ def index(request):
 			blogs.append(i)
 
 		return render_to_response("index.html",{"blogs":blogs})
+
+def reset(request):
+	client = MongoClient()
+	db = client.test_database
+	
