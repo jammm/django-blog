@@ -9,6 +9,8 @@ urlpatterns = patterns('',
 	url(r'^$', views.index, name='home'),
 	url(r'^insert_blog$', views.index, name='index'),
 	url(r'^reset$', views.reset, name='reset'),
+	url(r'^insert_comment$', views.insert_comment, name='insert_comment'),
+	url(r'^count$', views.count, name='count'),
     # Examples:
     # url(r'^$', 'mongodb.views.home', name='home'),
     # url(r'^mongodb/', include('mongodb.foo.urls')),
